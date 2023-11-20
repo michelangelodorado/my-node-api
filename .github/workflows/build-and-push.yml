@@ -22,8 +22,8 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker buildx create --use
-          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.DOCKERHUB_USERNAME }}/my-node-api:latest .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-node-api:latest
+          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.DOCKERHUB_USERNAME }}/my-node-api:v2 .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-node-api:v2
         env:
           DOCKER_BUILDKIT: 1
           DOCKER_CLI_ACI: 1
